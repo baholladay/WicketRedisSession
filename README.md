@@ -16,7 +16,7 @@ To Setup Wicket:
 3) Set your tomcat Persistent Manager Implementation:
 
 		$CATALINA_HOME/webapp/{yourproject}/META-INF/context.xml:
-			
+```			
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <Context>
 	<Manager className="org.apache.catalina.session.PersistentManager"           
@@ -29,7 +29,7 @@ To Setup Wicket:
 	        <Store className="your.class.location.CatalinaRedisSessionStore"/>
 	</Manager>
 </Context>
-
+```
 
 4) Create a jar for your two classes: CatalinaRedisSessionStore and RedisCache
 
@@ -51,9 +51,11 @@ org.apache.catalina.session.StandardSession.ACTIVITY_CHECK=true
 
 $CATALINA_HOME/webapp/{yourproject}/WEB-INF/web.xml:
 
+```
 	<session-config>
     	<tracking-mode>URL</tracking-mode>
 	</session-config>
+```
 
 8) Startup redis and tomcat
 
