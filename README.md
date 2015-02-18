@@ -43,6 +43,18 @@ commons-logging-1.1.1.jar
 commons-pool2-2.0.jar
 jedis-2.6.1.jar
 
-6) Startup redis and tomcat
+6) Set tomcat properties:
+
+org.apache.catalina.session.StandardSession.ACTIVITY_CHECK=true
+
+7) (OPTIONAL) If you want to completely not rely on cookies:
+
+$CATALINA_HOME/webapp/{yourproject}/WEB-INF/web.xml:
+
+	<session-config>
+    	<tracking-mode>URL</tracking-mode>
+	</session-config>
+
+8) Startup redis and tomcat
 
 
